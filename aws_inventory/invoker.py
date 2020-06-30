@@ -8,7 +8,6 @@ import botocore
 from opinel.utils.credentials import read_creds
 
 from . import config
-from . import progress
 from . import store
 
 from tqdm import *
