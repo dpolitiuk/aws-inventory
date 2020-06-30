@@ -17,23 +17,15 @@ This is a fork of NCC's aws-inventory tool. There are three differences;
   
 # Installation
 
-First, install Python2.7.
-
-There is a small GUI for displaying progress which uses the standard Python *Tkinter* module. However, the underlying native library code for Tcl/Tk may need extra steps to install. Then,
-
-`pip install -r requirements.txt`
-
-## Windows
-
-Use the Python installer to install Tkinter/Tcl/Tk.
-
-## Linux
-
-Use your OS package manager:
-
-### Ubuntu / Debian
-
-`sudo apt-get install python-tk`
+1. Clone the repo to your local drive
+2. Set up virtual environment for python by runing `virtualenv ~/.virtenv/aws-inv` (location can be different). This should use python 3 by default, if not you can specify `--python=/usr/local/bin/python3` to the `virtualenv` command
+3. Run `source ~/.virtenv/aws-inv/bin/activate` to active virtual environment (`~/.virtenv/aws-inv` folder should match the one specified earlier to `virtualenv` command)
+4. cd into cloned repo
+5. Run `pip install -r requirements.txt`
+6. Run script to generate data. For example, run `python aws_inventory.py --profile default --region us-east-1` for default profile and us-east-1 region
+7. After command is done running, run `open gui/dist/index.html` on Mac, or open file at `gui/dist/index.html` directly in your browser
+8. In the browser page, select generated file, which would be at `gui/aws_inventory_data-default.json` in the case with command above
+9. Click on the `Inventory` tab in the page and wait for data to be loaded
 
 # Usage
 
